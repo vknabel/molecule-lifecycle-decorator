@@ -23,7 +23,9 @@ export interface AllMoleculeLifecycles {
 
 export type OnMoleculeLifecycle = Partial<AllMoleculeLifecycles>;
 
-function moleculeLifecycleMapping(): { [hook: string]: [Subject<any>, boolean | undefined] } {
+function moleculeLifecycleMapping(): {
+  [hook: string]: [Subject<any>, boolean | undefined];
+} {
   return {
     ngOnChanges: [new Subject<SimpleChanges>(), false],
     ngOnInit: [new ReplaySubject<void>(), true],

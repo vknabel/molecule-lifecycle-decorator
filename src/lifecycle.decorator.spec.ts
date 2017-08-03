@@ -1,11 +1,14 @@
 import { Component, SimpleChanges } from '@angular/core';
-import { AllMoleculeLifecycles, MoleculeLifecycle } from './lifecycle.decorator';
+import {
+  AllMoleculeLifecycles,
+  MoleculeLifecycle
+} from './lifecycle.decorator';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/pluck';
 
-function myComponentType(): { new(): AllMoleculeLifecycles; } {
+function myComponentType(): { new (): AllMoleculeLifecycles } {
   @MoleculeLifecycle()
   @Component({
     template: ''
@@ -31,7 +34,7 @@ function myComponentType(): { new(): AllMoleculeLifecycles; } {
 }
 
 describe('molecule lifecycle decorator', () => {
-  let cut: { new(): AllMoleculeLifecycles; };
+  let cut: { new (): AllMoleculeLifecycles };
   let sut: AllMoleculeLifecycles;
 
   beforeEach(() => {
@@ -75,11 +78,14 @@ describe('molecule lifecycle decorator', () => {
 
     it(`#${hook}$ emits after calling #${hook}`, done => {
       const hook$ = sut[`${hook}$`];
-      hook$.first().do(
-        next => expect(next).toEqual('c'),
-        error => fail(error),
-        () => done()
-      ).subscribe();
+      hook$
+        .first()
+        .do(
+          next => expect(next).toEqual('c'),
+          error => fail(error),
+          () => done()
+        )
+        .subscribe();
       sut[hook]('c');
     });
   }
