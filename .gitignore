@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 dangerfile.js*
+src/**/*.js
+*.ngsummary.json
 
 # dependencies
 /node_modules

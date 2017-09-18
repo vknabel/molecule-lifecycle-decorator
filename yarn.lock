@@ -120,6 +120,10 @@
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/@ionic-native/status-bar/-/status-bar-3.6.1.tgz#7ad7e3c91eaa7ef1385514b14c5a07c0ca8d5785"
 
+"@molecule/lifecycle-decorator@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@molecule/lifecycle-decorator/-/lifecycle-decorator-0.0.2.tgz#aebc3d1bd07b4047896147df176e942b63e95204"
+
 "@ngtools/json-schema@1.0.9":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.0.9.tgz#19e46db409c66b4c43841eab514ff9640871affc"
